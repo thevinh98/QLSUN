@@ -1,0 +1,350 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="layout_giaovien.master.cs" Inherits="GUI.StyleGV.layout_giaovien" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SUN</title>
+
+
+
+    <link href="StyleHv/css/bootstrap.min.css" rel="stylesheet">
+    <link href="StyleHv/css/font-awesome.min.css" rel="stylesheet">
+    <link href="StyleHv/css/prettyPhoto.css" rel="stylesheet">
+    <link href="StyleHv/css/price-range.css" rel="stylesheet">
+    <link href="StyleHv/css/animate.css" rel="stylesheet">
+    <link href="StyleHv/css/main.css" rel="stylesheet">
+    <link href="StyleHv/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="StyleHv/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="StyleHv/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="StyleHv/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="StyleHv/images/ico/apple-touch-icon-57-precomposed.png">
+     <style>
+        .pan {
+            float: left;
+            ...;
+        }
+    </style>
+
+</head>
+<!--/head-->
+
+<body>
+    <form id="form3" runat="server">
+        <asp:ScriptManager runat="server" />
+        <header id="header">
+            <!--header-->
+            <div class="header_top">
+                <!--header_top-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="contactinfo">
+                                <ul class="nav nav-pills">
+                                    <li><a href="#"><i class="fa fa-phone"></i>+0347930077</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i>Sun@Gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="social-icons pull-right">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="twitter.com"><i class="fa fa-twitter"></i></a></li>
+
+                                    <li><a href="google.com"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/header_top-->
+
+            <div class="header-middle">
+                <!--header-middle-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 clearfix">
+                            <div class="logo pull-left">
+                                
+                                <a href="#" style="font-size: 35px; font-family: 'Times New Roman', Times, serif"><img style="max-height:35px" src="StyleHv/images/logo.png" />SUM</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--/header-middle-->
+
+            <div class="header-bottom" style="background-color: midnightblue;">
+                <!--header-bottom-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="mainmenu pull-left">
+                                <ul class="nav nav navbar-nav collapse navbar-collapse nav-pills nav-stacked main-menu">
+                                    <li><a href="ThongBaoGV.aspx" class="ajax-link" style="color:white" >Thông Báo</a></li>
+                                    <li><a href="KetQuaHocTapGV.aspx" class="ajax-link" style="color:white"  >Kết Quả Học Tập</a></li>
+                                    <li><a href="LichDayGV.aspx" class="ajax-link" style="color:white" >Lịch Dạy</a></li>
+                                    <li><a href="DiemDanhGV.aspx" class="ajax-link" style="color:white" >Điểm Danh</a></li>
+                                </ul>
+                                <%--  <ul class="nav navbar-nav collapse navbar-collapse" style="color: #f5f5f5;transition: unset;text-transform: uppercase;">
+                                    <li><a href="ThongTinThongBao.aspx" class="ajax-link" style="color:white">Thông Báo</a></li>
+                                    <li><a href="ThongTinHocTap.aspx" class="active">Thông Tin Học Tập</a></li>
+                                    <li><a href="ThongTinThoiKhoaBieu.aspx" class="active">Thời Khóa Biểu</a></li>
+                                    <li><a href="ThongTinDiemDanh.aspx" class="active">Thông Tin Điểm Danh</a></li>
+
+                                </ul>--%>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/header-bottom-->
+        </header>
+        <!--/header-->
+
+        <hr />
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+                            <h2>Thông Tin Giáo Viên</h2>
+                            <div class="panel-group category-products" id="accordian">
+                                <!--category-productsr-->
+
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" style="color: black">
+                                        <div class="sidebar-nav">
+                                            <div class="nav-canvas">
+                                                <div class="nav-sm nav nav-stacked">
+                                                </div>
+                                                <asp:Repeater ID="Rep_View_TT" runat="server">
+                                                    <ItemTemplate>
+                                                        <ul class="nav nav-pills nav-stacked main-menu">
+                                                            <li>
+                                                                <a class="ajax-link" href="#"><i class="glyphicon glyphicon-user"></i><span>
+                                                                    <asp:Label ID="lblName13" runat="server" Text='<%#  "Họ Tên:"  + Eval("HoTen") %>'></asp:Label>
+                                                                </span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="ajax-link" href="#"><i class="glyphicon glyphicon-gift"></i><span>
+                                                                    <asp:Label ID="lblName23" runat="server" Text='<%# "Năm Sinh:"  + DateTime.Parse(Eval("NamSinh").ToString()).ToString("dd-MM-yyyy") %>'></asp:Label></a>
+                                                            </li>
+                                                             <li>
+                                                                <a class="ajax-link" href="#"><i class="glyphicon glyphicon-gift"></i><span>
+                                                                    <asp:Label ID="Label1" runat="server" Text='<%# "Giới Tính:"  + Eval("GioiTinh") %>'></asp:Label></a>
+                                                            </li>
+                                                             <li>
+                                                                <a class="ajax-link" href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>
+                                                                    <asp:Label ID="lblName223" runat="server" Text='<%# "Trình Độ:"  + Eval("TrinhDo") %>'></asp:Label></a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="ajax-link" href="#"><i class="glyphicon glyphicon-earphone"></i><span>
+                                                                    <asp:Label ID="lblName213" runat="server" Text='<%# "SDT:"  + Eval("SDT") %>'></asp:Label></a>
+                                                            </li>
+                                                           
+                                                            <li>
+                                                                <a class="ajax-link" href="#"><i class="glyphicon glyphicon-envelope"></i><span>
+                                                                    <asp:Label ID="lblName233" runat="server" Text='<%# "Email:"  + Eval("Email") %>'></asp:Label></a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="ajax-link" href="#"><i class="glyphicon glyphicon-map-marker"></i><span>
+                                                                    <asp:Label ID="lblName243" runat="server" Text='<%#"Địa Chỉ:"  + Eval("DiaChi") %>'></asp:Label></a>
+                                                            </li>
+                                                        </ul>
+                                                    </ItemTemplate>
+
+                                                </asp:Repeater>
+
+                                                <hr />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="panel-heading" style="text-decoration: underline;">
+                                         
+                                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="PassWork_Click">   Đổi Mật Khẩu</asp:LinkButton>
+                                        <br />
+                                        <asp:LinkButton ID="dangxuat" runat="server" OnClick="LogOut_Click">Đăng Xuất</asp:LinkButton>
+                                       
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--/category-products-->
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-9 padding-right">
+                        <div class="features_items">
+                            <!--features_items-->
+                            <h2 class="title text-center">
+                                <asp:ContentPlaceHolder ID="table" runat="server"></asp:ContentPlaceHolder>
+                            </h2>
+
+                            <div class="col-sm-12">
+                                <div class="product-image-wrapper">
+                                    <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--features_items-->
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <!--Footer-->
+
+
+            <div class="footer-widget">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="single-widget">
+                                <h2>Địa Chỉ</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Địa Chỉ: 75-đường 2/4 -Nha Trang-Khánh Hòa</a></li>
+                                    <li><a href="#">SDT: +0347930077</a></li>
+                                    <li><a href="#">Email:Sum@gmail.com</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="single-widget">
+                                <h2>Danh Mục</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="ThongBaoGV.aspx">Thông Báo</a></li>
+                                    <li><a href="KetQuaHocTapGV.aspx">Kết Quả Học Tập</a></li>
+                                    <li><a href="LichDayGV.aspx">Lịch Dạy</a></li>
+                                    <li><a href="DiemDanhGV.aspx">Điểm Danh</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="single-widget">
+                                <h2>Bản đồ</h2>
+                                <div class="col-sm-12">
+                                    <iframe class="col-sm-12" style="max-height: 200px;width:auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.375317262302!2d109.18631461426803!3d12.290492532783302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317068000122ff11%3A0xd7d9135faeaec69b!2zNzUgxJDGsOG7nW5nIDIvNCwgVsSpbmggSOG6o2ksIFRow6BuaCBwaOG7kSBOaGEgVHJhbmcsIEtow6FuaCBIw7JhLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1591262937476!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <p class="pull-left">Copyright © 2020 SUN.</p>
+                        <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Phùng Thế Vinh</a></span></p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!--/Footer-->
+
+         <div class="modal fade " id="PassModal" tabindex="-1" role="dialog" aria-labelledby="ModalTitle"
+            aria-hidden="true">
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                             <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                &times;</button>
+                                            <h4 class="modal-title" id="ModalTitle">Đổi Mật Khẩu</h4>
+                                           
+
+                                        </div>
+                            <div class="modal-body">
+                                <asp:Label ID="lb_noti_nd" Visible="false" Text="Đổi Mật Khẩu Thành Công " Font-Names="Times New Roman TUR" Font-Italic="true" Font-Size="25px" runat="server" ForeColor="Blue"></asp:Label>
+
+                                <asp:Label ID="lb_notipass" Text=" Mật Khẩu Cũ" Font-Size="20px" Font-Names="Times New Roman TUR" runat="server"></asp:Label>
+
+                                <asp:TextBox ID="txtPass" Font-Names="Times New Roman TUR" runat="server" TextMode="Password" CssClass="form-control"
+                                    placeholder="Nhập Lại Khẩu Cũ" />
+
+                                <asp:Label ID="lb_pass" Font-Names="Times New Roman TUR" Font-Italic="true" runat="server" ForeColor="Red"></asp:Label>
+                                <br />
+                                <asp:Label ID="lb_notipassword1" Text=" Mật Khẩu Mới" Font-Size="20px" Font-Names="Times New Roman TUR" runat="server"></asp:Label>
+                                <asp:TextBox ID="txtPassword1" Font-Names="Times New Roman TUR" runat="server" TextMode="Password" CssClass="form-control"
+                                    placeholder="Nhập Mật Khẩu Mới" />
+
+                                <asp:Label ID="lb_Password1" Font-Names="Times New Roman TUR" Font-Italic="true" runat="server" ForeColor="Red"></asp:Label>
+                                <br />
+                                <asp:Label ID="lb_notipass2" Text=" Nhập Lại Mật Khẩu Mới" Font-Size="20px" Font-Names="Times New Roman TUR" runat="server"></asp:Label>
+                                <asp:TextBox ID="txtPassword2" Font-Names="Times New Roman TUR" runat="server" TextMode="Password" CssClass="form-control"
+                                    placeholder="Nhập Lại Mật Khẩu" />
+
+                                <asp:Label ID="lb_Password2" Font-Names="Times New Roman TUR" Font-Italic="true" runat="server" ForeColor="Red"></asp:Label>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <asp:Button ID="btnLogin" Text="Ok" runat="server" OnClick="btn_Pass_Click" class="btn btn-default" />
+                                <asp:Button runat="server" class="btn btn-default" data-dismiss="modal" aria-hidden="true" Text="Close" />
+                            </div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+
+        <script src="StyleHv/js/jquery.js"></script>
+        <script src="StyleHv/js/bootstrap.min.js"></script>
+        <script src="StyleHv/js/jquery.scrollUp.min.js"></script>
+        <script src="StyleHv/js/price-range.js"></script>
+        <script src="StyleHv/js/jquery.prettyPhoto.js"></script>
+        <script src="StyleHv/js/main.js"></script>
+    </form>
+</body>
+</html>

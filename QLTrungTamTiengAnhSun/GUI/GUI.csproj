@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19064E27-820B-47BA-A8E0-B7EE31106394}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\itextsharp-5.0.2-dll\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SubSonic">
+      <HintPath>..\..\..\..\SubSonic2.2\SubSonic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChucVuAdd.aspx" />
+    <Content Include="ChucVuView.aspx" />
+    <Content Include="DanhSachHocPhiHomNay.aspx" />
+    <Content Include="DanhSachHocVienLop.aspx" />
+    <Content Include="DanhSachThongBaoGVHomNay.aspx" />
+    <Content Include="DanhSachThongBaoLopHomNay.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DiemDanhLop.aspx" />
+    <Content Include="DiemDanhView.aspx" />
+    <Content Include="HocPhiView.aspx" />
+    <Content Include="DotKiemTraView.aspx" />
+    <Content Include="DotTuyenSinhView.aspx" />
+    <Content Include="GiaoVienAdd.aspx" />
+    <Content Include="GiaoVienView.aspx" />
+    <Content Include="HocPhiAdd.aspx" />
+    <Content Include="DongHocPhi.aspx" />
+    <Content Include="HocVienAdd.aspx" />
+    <Content Include="HocVienViewTS.aspx" />
+    <Content Include="KetQuaHocTapAdd.aspx" />
+    <Content Include="KetQuaHocTapView.aspx" />
+    <Content Include="KetQuaTuyenSinhAdd.aspx" />
+    <Content Include="KetQuaTuyenSinhView.aspx" />
+    <Content Include="KhoaHocView.aspx" />
+    <Content Include="LichDayGiaoVienView.aspx" />
+    <Content Include="LichGiangDayAdd.aspx" />
+    <Content Include="LichGiangDayView.aspx" />
+    <Content Include="StyleGV\DanhSachHocVienLop.aspx" />
+    <Content Include="StyleGV\DiemDanhGV.aspx" />
+    <Content Include="StyleGV\DiemDanhLop.aspx" />
+    <Content Include="StyleGV\KetQuaHocTapGV.aspx" />
+    <Content Include="StyleGV\LichDayGV.aspx" />
+    <Content Include="StyleGV\StyleHv\images\logo.png" />
+    <Content Include="StyleGV\ThongBaoGV.aspx" />
+    <Content Include="StyleHv\images\logo.png" />
+    <Content Include="ThongTinThoiKhoaBieu.aspx" />
+    <Content Include="LichHocLop.aspx" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="LopAdd.aspx" />
+    <Content Include="LopView2.aspx" />
+    <Content Include="LopView.aspx" />
+    <Content Include="LuongGiaoVienView.aspx" />
+    <Content Include="NguoiDungADMView.aspx" />
+    <Content Include="NguoiDungGiaoVienView.aspx" />
+    <Content Include="NguoiDungHocVienView.aspx" />
+    <Content Include="NhanVienAdd.aspx" />
+    <Content Include="NhanVienViewDl.aspx" />
+    <Content Include="NhapHocAdd.aspx" />
+    <Content Include="NhapHocView.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LayoutADM.Master" />
+    <Content Include="StyleLogin\login\css\main.css" />
+    <Content Include="StyleLogin\login\css\util.css" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="StyleLogin\login\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="StyleLogin\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="StyleLogin\login\images\bg-01.jpg" />
+    <Content Include="StyleLogin\login\images\icons\favicon.ico" />
+    <Content Include="StyleLogin\login\images\icons\map-marker.png" />
+    <Content Include="StyleLogin\login\js\main.js" />
+    <Content Include="StyleLogin\login\js\map-custom.js" />
+    <Content Include="StyleLogin\login\vendor\animate\animate.css" />
+    <Content Include="StyleLogin\login\vendor\animsition\css\animsition.css" />
+    <Content Include="StyleLogin\login\vendor\animsition\css\animsition.min.css" />
+    <Content Include="StyleLogin\login\vendor\animsition\js\animsition.js" />
+    <Content Include="StyleLogin\login\vendor\animsition\js\animsition.min.js" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\js\popper.js" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="StyleLogin\login\vendor\countdowntime\countdowntime.js" />
+    <Content Include="StyleLogin\login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="StyleLogin\login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="StyleLogin\login\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="StyleLogin\login\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="StyleLogin\login\vendor\daterangepicker\moment.js" />
+    <Content Include="StyleLogin\login\vendor\daterangepicker\moment.min.js" />
+    <Content Include="StyleLogin\login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="StyleLogin\login\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="StyleLogin\login\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="StyleLogin\login\vendor\select2\select2.css" />
+    <Content Include="StyleLogin\login\vendor\select2\select2.js" />
+    <Content Include="StyleLogin\login\vendor\select2\select2.min.css" />
+    <Content Include="StyleLogin\login\vendor\select2\select2.min.js" />
+    <Content Include="ThongTinDiemDanh.aspx" />
+    <Content Include="ThongTinHocTap.aspx" />
+    <Content Include="ThongTinThongBao.aspx" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="StyleLogin\login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="StyleLogin\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="StyleLogin\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="StyleLogin\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="StyleLogin\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="StyleLogin\login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="StyleLogin\login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="layout_Hv.Master" />
+    <Content Include="StyleGV\layout_giaovien.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PhongHocView.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="ThongBaoGVView.aspx" />
+    <Content Include="ThongBaoLopView.aspx" />
+    <Content Include="ThongKeHocPhi.aspx" />
+    <Content Include="ThongKeKhoanChi.aspx" />
+    <Content Include="ThuChiAdd.aspx" />
+    <Content Include="ThuChiView.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChucVuAdd.aspx.cs">
+      <DependentUpon>ChucVuAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChucVuAdd.aspx.designer.cs">
+      <DependentUpon>ChucVuAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChucVuView.aspx.cs">
+      <DependentUpon>ChucVuView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChucVuView.aspx.designer.cs">
+      <DependentUpon>ChucVuView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachHocPhiHomNay.aspx.cs">
+      <DependentUpon>DanhSachHocPhiHomNay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachHocPhiHomNay.aspx.designer.cs">
+      <DependentUpon>DanhSachHocPhiHomNay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachHocVienLop.aspx.cs">
+      <DependentUpon>DanhSachHocVienLop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachHocVienLop.aspx.designer.cs">
+      <DependentUpon>DanhSachHocVienLop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachThongBaoGVHomNay.aspx.cs">
+      <DependentUpon>DanhSachThongBaoGVHomNay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachThongBaoGVHomNay.aspx.designer.cs">
+      <DependentUpon>DanhSachThongBaoGVHomNay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachThongBaoLopHomNay.aspx.cs">
+      <DependentUpon>DanhSachThongBaoLopHomNay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachThongBaoLopHomNay.aspx.designer.cs">
+      <DependentUpon>DanhSachThongBaoLopHomNay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DiemDanhLop.aspx.cs">
+      <DependentUpon>DiemDanhLop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DiemDanhLop.aspx.designer.cs">
+      <DependentUpon>DiemDanhLop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DiemDanhView.aspx.cs">
+      <DependentUpon>DiemDanhView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DiemDanhView.aspx.designer.cs">
+      <DependentUpon>DiemDanhView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HocPhiView.aspx.cs">
+      <DependentUpon>HocPhiView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HocPhiView.aspx.designer.cs">
+      <DependentUpon>HocPhiView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DotKiemTraView.aspx.cs">
+      <DependentUpon>DotKiemTraView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DotKiemTraView.aspx.designer.cs">
+      <DependentUpon>DotKiemTraView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DotTuyenSinhView.aspx.cs">
+      <DependentUpon>DotTuyenSinhView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DotTuyenSinhView.aspx.designer.cs">
+      <DependentUpon>DotTuyenSinhView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoVienAdd.aspx.cs">
+      <DependentUpon>GiaoVienAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiaoVienAdd.aspx.designer.cs">
+      <DependentUpon>GiaoVienAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoVienView.aspx.cs">
+      <DependentUpon>GiaoVienView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiaoVienView.aspx.designer.cs">
+      <DependentUpon>GiaoVienView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HocPhiAdd.aspx.cs">
+      <DependentUpon>HocPhiAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HocPhiAdd.aspx.designer.cs">
+      <DependentUpon>HocPhiAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DongHocPhi.aspx.cs">
+      <DependentUpon>DongHocPhi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DongHocPhi.aspx.designer.cs">
+      <DependentUpon>DongHocPhi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HocVienAdd.aspx.cs">
+      <DependentUpon>HocVienAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HocVienAdd.aspx.designer.cs">
+      <DependentUpon>HocVienAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HocVienViewTS.aspx.cs">
+      <DependentUpon>HocVienViewTS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HocVienViewTS.aspx.designer.cs">
+      <DependentUpon>HocVienViewTS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KetQuaHocTapAdd.aspx.cs">
+      <DependentUpon>KetQuaHocTapAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KetQuaHocTapAdd.aspx.designer.cs">
+      <DependentUpon>KetQuaHocTapAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KetQuaHocTapView.aspx.cs">
+      <DependentUpon>KetQuaHocTapView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KetQuaHocTapView.aspx.designer.cs">
+      <DependentUpon>KetQuaHocTapView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KetQuaTuyenSinhAdd.aspx.cs">
+      <DependentUpon>KetQuaTuyenSinhAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KetQuaTuyenSinhAdd.aspx.designer.cs">
+      <DependentUpon>KetQuaTuyenSinhAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KetQuaTuyenSinhView.aspx.cs">
+      <DependentUpon>KetQuaTuyenSinhView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KetQuaTuyenSinhView.aspx.designer.cs">
+      <DependentUpon>KetQuaTuyenSinhView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KhoaHocView.aspx.cs">
+      <DependentUpon>KhoaHocView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KhoaHocView.aspx.designer.cs">
+      <DependentUpon>KhoaHocView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutADM.Master.cs">
+      <DependentUpon>LayoutADM.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LayoutADM.Master.designer.cs">
+      <DependentUpon>LayoutADM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="layout_Hv.Master.cs">
+      <DependentUpon>layout_Hv.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="layout_Hv.Master.designer.cs">
+      <DependentUpon>layout_Hv.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LichDayGiaoVienView.aspx.cs">
+      <DependentUpon>LichDayGiaoVienView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LichDayGiaoVienView.aspx.designer.cs">
+      <DependentUpon>LichDayGiaoVienView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LichGiangDayAdd.aspx.cs">
+      <DependentUpon>LichGiangDayAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LichGiangDayAdd.aspx.designer.cs">
+      <DependentUpon>LichGiangDayAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LichGiangDayView.aspx.cs">
+      <DependentUpon>LichGiangDayView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LichGiangDayView.aspx.designer.cs">
+      <DependentUpon>LichGiangDayView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StyleGV\DanhSachHocVienLop.aspx.cs">
+      <DependentUpon>DanhSachHocVienLop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StyleGV\DanhSachHocVienLop.aspx.designer.cs">
+      <DependentUpon>DanhSachHocVienLop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StyleGV\DiemDanhGV.aspx.cs">
+      <DependentUpon>DiemDanhGV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StyleGV\DiemDanhGV.aspx.designer.cs">
+      <DependentUpon>DiemDanhGV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StyleGV\DiemDanhLop.aspx.cs">
+      <DependentUpon>DiemDanhLop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StyleGV\DiemDanhLop.aspx.designer.cs">
+      <DependentUpon>DiemDanhLop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StyleGV\KetQuaHocTapGV.aspx.cs">
+      <DependentUpon>KetQuaHocTapGV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StyleGV\KetQuaHocTapGV.aspx.designer.cs">
+      <DependentUpon>KetQuaHocTapGV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StyleGV\layout_giaovien.Master.cs">
+      <DependentUpon>layout_giaovien.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StyleGV\layout_giaovien.Master.designer.cs">
+      <DependentUpon>layout_giaovien.Master</DependentUpon>
+    </Compile>
+    <Compile Include="StyleGV\LichDayGV.aspx.cs">
+      <DependentUpon>LichDayGV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StyleGV\LichDayGV.aspx.designer.cs">
+      <DependentUpon>LichDayGV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StyleGV\ThongBaoGV.aspx.cs">
+      <DependentUpon>ThongBaoGV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StyleGV\ThongBaoGV.aspx.designer.cs">
+      <DependentUpon>ThongBaoGV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinThoiKhoaBieu.aspx.cs">
+      <DependentUpon>ThongTinThoiKhoaBieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinThoiKhoaBieu.aspx.designer.cs">
+      <DependentUpon>ThongTinThoiKhoaBieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LichHocLop.aspx.cs">
+      <DependentUpon>LichHocLop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LichHocLop.aspx.designer.cs">
+      <DependentUpon>LichHocLop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LopAdd.aspx.cs">
+      <DependentUpon>LopAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LopAdd.aspx.designer.cs">
+      <DependentUpon>LopAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LopView2.aspx.cs">
+      <DependentUpon>LopView2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LopView2.aspx.designer.cs">
+      <DependentUpon>LopView2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LopView.aspx.cs">
+      <DependentUpon>LopView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LopView.aspx.designer.cs">
+      <DependentUpon>LopView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LuongGiaoVienView.aspx.cs">
+      <DependentUpon>LuongGiaoVienView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LuongGiaoVienView.aspx.designer.cs">
+      <DependentUpon>LuongGiaoVienView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDungADMView.aspx.cs">
+      <DependentUpon>NguoiDungADMView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NguoiDungADMView.aspx.designer.cs">
+      <DependentUpon>NguoiDungADMView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDungGiaoVienView.aspx.cs">
+      <DependentUpon>NguoiDungGiaoVienView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NguoiDungGiaoVienView.aspx.designer.cs">
+      <DependentUpon>NguoiDungGiaoVienView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDungHocVienView.aspx.cs">
+      <DependentUpon>NguoiDungHocVienView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NguoiDungHocVienView.aspx.designer.cs">
+      <DependentUpon>NguoiDungHocVienView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienAdd.aspx.cs">
+      <DependentUpon>NhanVienAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NhanVienAdd.aspx.designer.cs">
+      <DependentUpon>NhanVienAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienViewDl.aspx.cs">
+      <DependentUpon>NhanVienViewDl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NhanVienViewDl.aspx.designer.cs">
+      <DependentUpon>NhanVienViewDl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NhapHocAdd.aspx.cs">
+      <DependentUpon>NhapHocAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NhapHocAdd.aspx.designer.cs">
+      <DependentUpon>NhapHocAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NhapHocView.aspx.cs">
+      <DependentUpon>NhapHocView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NhapHocView.aspx.designer.cs">
+      <DependentUpon>NhapHocView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhongHocView.aspx.cs">
+      <DependentUpon>PhongHocView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhongHocView.aspx.designer.cs">
+      <DependentUpon>PhongHocView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongBaoGVView.aspx.cs">
+      <DependentUpon>ThongBaoGVView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongBaoGVView.aspx.designer.cs">
+      <DependentUpon>ThongBaoGVView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongBaoLopView.aspx.cs">
+      <DependentUpon>ThongBaoLopView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongBaoLopView.aspx.designer.cs">
+      <DependentUpon>ThongBaoLopView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeHocPhi.aspx.cs">
+      <DependentUpon>ThongKeHocPhi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongKeHocPhi.aspx.designer.cs">
+      <DependentUpon>ThongKeHocPhi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeKhoanChi.aspx.cs">
+      <DependentUpon>ThongKeKhoanChi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongKeKhoanChi.aspx.designer.cs">
+      <DependentUpon>ThongKeKhoanChi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinDiemDanh.aspx.cs">
+      <DependentUpon>ThongTinDiemDanh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinDiemDanh.aspx.designer.cs">
+      <DependentUpon>ThongTinDiemDanh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinHocTap.aspx.cs">
+      <DependentUpon>ThongTinHocTap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinHocTap.aspx.designer.cs">
+      <DependentUpon>ThongTinHocTap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinThongBao.aspx.cs">
+      <DependentUpon>ThongTinThongBao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinThongBao.aspx.designer.cs">
+      <DependentUpon>ThongTinThongBao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThuChiAdd.aspx.cs">
+      <DependentUpon>ThuChiAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThuChiAdd.aspx.designer.cs">
+      <DependentUpon>ThuChiAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThuChiView.aspx.cs">
+      <DependentUpon>ThuChiView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThuChiView.aspx.designer.cs">
+      <DependentUpon>ThuChiView.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="StyleADM\bower_components\" />
+    <Folder Include="StyleADM\css\" />
+    <Folder Include="StyleADM\fonts\" />
+    <Folder Include="StyleADM\img\" />
+    <Folder Include="StyleADM\js\" />
+    <Folder Include="StyleGV\StyleHv\css\" />
+    <Folder Include="StyleGV\StyleHv\fonts\" />
+    <Folder Include="StyleGV\StyleHv\js\" />
+    <Folder Include="StyleHv\css\" />
+    <Folder Include="StyleHv\fonts\" />
+    <Folder Include="StyleHv\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{aaf39149-49ae-4fd2-9e9e-4e0f3a765a85}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{a9e5af42-2206-4191-854a-eed54645c5d0}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55735</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55735/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
